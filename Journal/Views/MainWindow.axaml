@@ -6,56 +6,16 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Journal.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Journal"
+        Title="lab_7"
         MaxWidth="1200"
         MaxHeight="600"
         MinWidth="1200"
-        MinHeight="600">
+        MinHeight="600"
+        Content="{Binding Content}">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-
-    <Grid>
-
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="36"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="400"/>
-        </Grid.RowDefinitions>
-        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Grid.Row="0">
-            <MenuItem Background="LightBlue" Click="Button_File_Click" x:Name="Button_File">
-                <MenuItem.Header>
-                    <TextBlock Text="File"></TextBlock>
-                </MenuItem.Header>
-                <MenuItem.ContextMenu>
-                    <ContextMenu  Background="LightBlue">
-                        <MenuItem Header="Save" Name="Button_Save"/>
-                        <MenuItem Header="Load" Name="Button_Load"/>
-                        <MenuItem Header="Exit" Name="Button_Exit"/>
-                    </ContextMenu>
-                </MenuItem.ContextMenu>
-            </MenuItem>
-            <MenuItem Header="About" Background="LightGreen" Classes="Button_About"/>
-        </Menu>
-
-
-        <TextBlock Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
-            Данные об успеваемости
-        </TextBlock>
-
-
-        <Border BorderBrush="Black" Grid.Row="2" VerticalAlignment="Top" BorderThickness="1">
-            <DataGrid Name="Info_About_Students" Items="{Binding StudentState}" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding __states[i].Name}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Border>
-
-
-    </Grid>
 
 </Window>
